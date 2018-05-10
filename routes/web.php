@@ -55,9 +55,9 @@ Route::group(['middleware' => 'auth', 'prefix' => '/admin'], function() {
 
 // Frontend Routes...
 use App\User;
-use App\Http\Resources\User as UserResource;
+use App\Http\Resources\UserResource;
 Route::get('/user', function () {
-    return UserResource::collection(User::all());
+    return User::all();
 });
 
 Route::get('/', 'TorneiController@index');

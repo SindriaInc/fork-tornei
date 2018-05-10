@@ -17,6 +17,7 @@ class JSONController extends Controller
         return User::all();
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
