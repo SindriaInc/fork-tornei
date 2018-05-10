@@ -54,6 +54,11 @@ Route::group(['middleware' => 'auth', 'prefix' => '/admin'], function() {
 
 
 // Frontend Routes...
+use App\User;
+use App\Http\Resources\User as UserResource;
+Route::get('/user', function () {
+    return UserResource::collection(User::all());
+});
 
 Route::get('/', 'TorneiController@index');
 Route::post('/store', 'TorneiController@storeData')->name('subscriber.store');
