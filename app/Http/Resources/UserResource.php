@@ -15,6 +15,6 @@ class UserResource extends Resource
      */
     public function toArray($request)
     {
-        return User::all();
+        return User::find(1);
     }
 }
