@@ -81,8 +81,8 @@ Route::get('subscriber', ['middleware' => 'cors', function() {
  */
 Route::get('user/{id}', ['middleware' => 'cors', function($id) {
     return User::find($id)->jsonSerialize();
-});
+}]);
 
 Route::get('/subscriber/{id}', ['middleware' => 'cors', function($id) {
     return \App\Models\Subscriber::find($id)->jsonSerialize();
-});
+}]);
