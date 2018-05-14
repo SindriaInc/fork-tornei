@@ -33,7 +33,7 @@ class TorneiController extends Controller {
             'name' => 'required|string|max:255',
             'surname' => 'required|string|max:255',
             'birthday' => 'required',
-            'email' => 'required|string|email|max:255',
+            //'email' => 'required|string|email|max:255',
             'phone' => 'required|numeric|digits_between:3,11',
             'fit' => 'required|numeric|digits_between:8,11',
             'club' => 'required|string|max:255',

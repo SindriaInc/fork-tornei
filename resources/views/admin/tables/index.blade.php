@@ -28,6 +28,7 @@
             
             		<tbody>
             			@foreach($subscribers as $subscriber)
+                            @if($subscriber->category->short == 'AM')
                 			<tr>
                                 <td>{{ $subscriber->id }}</td>
                     			<td>{{ $subscriber->name }}</td>
@@ -55,6 +56,7 @@
                     			</td>
                                  
                 			</tr>
+                            @endif
             			@endforeach
 
             		</tbody>
