@@ -45,18 +45,8 @@ class AdminController extends Controller
         return AdminController::message('success_message', 'Iscrizione eliminata con successo');
     }
 
-    public function findSubscriber($id) {
-        return Subscriber::find($id);
-    }
-
     public static function message($type, $display) {
         $message = Session::flash($type, $display);
         return redirect('/admin')->withMessage($message);
     }
-
-    public function admin()
-    {
-        return view('admin');
-    }
-
 }
