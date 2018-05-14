@@ -12,7 +12,7 @@ class UsersSeeder extends Seeder
     public function run()
     {
         $data = array(
-            array('name'=>'Davide', 'email'=>'diblasio.davide@gmail.com', 'password'=>bcrypt('ciaone'))
+            array('name'=>'Marco', 'email'=>'t@me.it', 'password'=>bcrypt('todos'),'isAdmin'=>1)
         );
 
         DB::table('users')->insert($data);

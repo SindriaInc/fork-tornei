@@ -61,16 +61,28 @@ Route::group(['middleware' => 'auth', 'prefix' => '/admin'], function() {
 Route::get('/', 'TorneiController@index');
 Route::post('/store', 'TorneiController@storeData')->name('subscriber.store');
 
-//Route::resource('/webservice','WebserviceController');
-
 //Route::get('/user', function () {
 //    return new UserResource(User::find(1));
 //});
 
-Route::get('/user', function () {
-    return UserResource::collection(User::all());
+/*
+ * Get all user and subscriber
+ */
+Route::get('user', ['middleware' => 'cors', function() {
+    return UserResource::collection(User::all())->jsonSerialize();
+}]);
+Route::get('subscriber', ['middleware' => 'cors', function() {
+    return SubscriberResource::collection(\App\Models\Subscriber::all())->jsonSerialize();
+}]);
+
+
+/*
+ * Get user and subscriber by id
+ */
+Route::get('user/{id}',  function($id) {
+    return User::find($id)->jsonSerialize();
 });
 
-Route::get('/subscriber', function () {
-    return SubscriberResource::collection(\App\Models\Subscriber::all());
+Route::get('/subscriber/{id}', function($id) {
+    return \App\Models\Subscriber::find($id)->jsonSerialize();
 });

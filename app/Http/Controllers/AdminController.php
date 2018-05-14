@@ -49,5 +49,4 @@ class AdminController extends Controller
         $message = Session::flash($type, $display);
         return redirect('/admin')->withMessage($message);
     }
-
 }

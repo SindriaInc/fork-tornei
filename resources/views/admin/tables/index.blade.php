@@ -42,17 +42,17 @@
                                 <td>{{ $subscriber->type->short }}</td>
                                 <td>{{ $subscriber->note }}</td>
                     			
-                                <td>
+                                {{--<td>
                                     <form action="{{ route('admin.subscribers.delete', $subscriber->id) }}" method="post" enctype="multipart/form-data">
 
                                         {{ csrf_field() }}
 
-                                        {{-- method_field('DELETE') --}}
+                                        --}}{{-- method_field('DELETE') --}}{{--
 
                                         <button type="submit" class="btn btn-small btn-danger" name="submit">Elimina</button>
 
                                     </form>
-                    			</td>
+                    			</td>--}}
                                  
                 			</tr>
             			@endforeach
